@@ -13,6 +13,9 @@ export class CollegueComponent implements OnInit {
   @Input()
   col: Collegue;
 
+  // Switch button
+  switchBtn = false;
+
   ngOnInit(): void {
   }
 
@@ -23,7 +26,13 @@ export class CollegueComponent implements OnInit {
 
   // Modifier un collègue
   modifier(): void {
+    this.switchBtn = true;
     console.log('Modification du collègue');
+  }
+
+  // Valider
+  valider(): void {
+    this.switchBtn = false;
   }
 
 }

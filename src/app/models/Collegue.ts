@@ -1,8 +1,9 @@
+/**Collègue */
 export class Collegue {
   constructor(
     private _matricule: string,
     private _nom: string,
-    private _prenoms: string,
+    private _prenom: string,
     private _email: string,
     private _dateDeNaissance: Date,
     private _photoUrl: string) {
@@ -16,8 +17,8 @@ export class Collegue {
     return this._nom;
   }
 
-  public get prenoms(): string {
-    return this._prenoms;
+  public get prenom(): string {
+    return this._prenom;
   }
 
   public get email(): string {

@@ -1,24 +1,21 @@
-
-<div class="container-fluid">
-  <!-- Identité du collègue -->
-  <div class="row">
-    <div class="col-12 col-md-4">
-      <img src={{photoUrl}} alt="Photo">
-    </div>
-    <div class="col-12 col-md-8">
-      <p> <strong>Matricule :</strong> {{matricule}}</p>
-      <p> <strong>Nom :</strong> {{nom}}</p>
-      <p> <strong>Prénom :</strong> {{prenoms}}</p>
-      <p> <strong>Date de naissance :</strong> {{dateDeNaissance}}</p>
-      <p> <strong>Email :</strong> {{email}}</p>
-      <!-- Evènements -->
-      <div class="row">
-        <div class="col-md-4">
-          <a href="#" (click)="creer()">Créer un nouveau collègue</a>
-        </div>
-        <div class="col-md-8">
-          <button class="btn-info" (click)="modifier()">Modifier</button>
-        </div>
+<!-- Identité du collègue -->
+<div class="row">
+  <div class="col-12 col-md-4">
+    <img src={{col.photoUrl}} alt="Photo">
+  </div>
+  <div class="col-12 col-md-8">
+    <p> <strong>Matricule :</strong> {{col.matricule}}</p>
+    <p> <strong>Nom :</strong> {{col.nom}}</p>
+    <p> <strong>Prénom :</strong> {{col.prenoms}}</p>
+    <p> <strong>Date de naissance :</strong> {{col.dateDeNaissance.getDate() + '/' + col.dateDeNaissance.getMonth() + '/' + col.dateDeNaissance.getFullYear()}}</p>
+    <p> <strong>Email :</strong> {{col.email}}</p>
+    <!-- Evènements -->
+    <div class="row">
+      <div class="col-md-4">
+        <a href="#" (click)="creer()">Créer un nouveau collègue</a>
+      </div>
+      <div class="col-md-8">
+        <button class="btn-info" (click)="modifier()">Modifier</button>
       </div>
     </div>
   </div>

@@ -1,0 +1,27 @@
+ <div class="jumbotron">
+  <h1>Collègues</h1>
+</div>
+<div class="container">
+  <!-- Identité du collègue -->
+  <div class="row">
+    <div class="col-md-4">
+      <img src={{photoUrl}} alt="Photo">
+    </div>
+    <div class="col-md-8">
+      <p> <strong>Matricule :</strong> {{matricule}}</p>
+      <p> <strong>Nom :</strong> {{nom}}</p>
+      <p> <strong>Prénom :</strong> {{prenoms}}</p>
+      <p> <strong>Date de naissance :</strong> {{dateDeNaissance}}</p>
+      <p> <strong>Email :</strong> {{email}}</p>
+      <!-- Evènements -->
+      <div class="row">
+        <div class="col-md-4">
+          <a href="#" (click)="creer()">Créer un nouveau collègue</a>
+        </div>
+        <div class="col-md-8">
+          <button (click)="modifier()">Modifier</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

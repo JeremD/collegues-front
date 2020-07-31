@@ -1,4 +1,15 @@
 <h5>Recherche par nom</h5>
 
-<input type="text" class="form-control" placeholder="Nom">
-<!-- <button class="btn btn-outline-secondary" (click)="rechercher()">Rechercher</button> -->
+<div class="input-group mb-3">
+ <input type="text" class="form-control" placeholder="Nom">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" (click)="rechercher()">Rechercher</button>
+  </div>
+</div>
+
+<!-- Liste des matricules -->
+<div *ngIf="recherche">
+  <ul>
+    <li *ngFor="let m of matriculesMock">{{m.matricule}}</li>
+  </ul>
+</div>

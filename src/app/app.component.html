@@ -3,7 +3,14 @@
 </div>
 
 <div class="container-fluid">
-  <!-- Affichage du collègue -->
-  <app-collegue [col]="collegueMock"></app-collegue>
-  <app-recherche-collegue-par-nom></app-recherche-collegue-par-nom>
+  <div class="row">
+    <div class="col-12 col-lg-4">
+      <!-- recherche par le nom-->
+      <app-recherche-collegue-par-nom></app-recherche-collegue-par-nom>
+    </div>
+    <div class="col-12 col-lg-8">
+      <!-- Affichage du collègue -->
+      <app-collegue [col]="collegueMock"></app-collegue>
+    </div>
+  </div>
 </div>

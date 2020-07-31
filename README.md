@@ -1,8 +1,14 @@
-# Collegues Front (demo Angular)
+# Collegues Front
 
 [![Build Status](https://travis-ci.org/JeremD/collegues-front.svg?branch=master)](https://travis-ci.org/JeremD/collegues-front)
 
 **[App link](https://jeremd.github.io/collegues-front/)**
+
+## TP 5 Incomplet !!!
+
+La branch **back-local** contient le code jusqu'au TP 4.
+
+(je ne peux pas avancer sur le TP 5 pendant les vancances).
 
 ---
 

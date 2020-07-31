@@ -12,13 +12,16 @@ export class RechercheCollegueParNomComponent implements OnInit {
   recherche = false;
 
   // Récupération de la liste des matricules
-  matriculeTab: string[];
+  matriculeTab: string;
 
   // Appel du service matricule
   constructor(private matriculeSrv: DataService) { }
 
   ngOnInit(): void {
-    this.matriculeTab = this.matriculeSrv.rechercherParNom();
+    this.matriculeSrv.sabonnerAuNom()
+      .subscribe(matricule => this.matriculeTab = matricule,
+        err => { },
+        () => { });
   }
 
   // Afficher la liste des matricules

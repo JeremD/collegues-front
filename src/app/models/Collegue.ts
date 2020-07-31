@@ -1,4 +1,6 @@
-/**Collègue */
+/**
+ * Collègue
+ */
 export class Collegue {
   constructor(
     private _matricule: string,

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Collegue } from '../models/Collegue';
+import { DataService } from '../services/data.service';
 
 // Identité d'un collègue
 @Component({
@@ -16,7 +17,11 @@ export class CollegueComponent implements OnInit {
   // Switch button
   switchBtn = false;
 
+  // Appel du service collègue
+  constructor(private collegueSrv: DataService) { }
+
   ngOnInit(): void {
+    this.col = this.collegueSrv.recupererCollegueCourant();
   }
 
   // Créer un collègue

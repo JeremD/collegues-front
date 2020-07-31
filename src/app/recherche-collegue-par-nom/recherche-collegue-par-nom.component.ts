@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { matriculesMock } from '../mock/matricules.mock';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-recherche-collegue-par-nom',
@@ -8,13 +8,17 @@ import { matriculesMock } from '../mock/matricules.mock';
 })
 export class RechercheCollegueParNomComponent implements OnInit {
 
-  // Récupération de la liste des matricules
-  matriculesMock = matriculesMock;
+  // Matricules masqués
   recherche = false;
 
-  constructor() { }
+  // Récupération de la liste des matricules
+  matriculeTab: string[];
+
+  // Appel du service matricule
+  constructor(private matriculeSrv: DataService) { }
 
   ngOnInit(): void {
+    this.matriculeTab = this.matriculeSrv.rechercherParNom();
   }
 
   // Afficher la liste des matricules

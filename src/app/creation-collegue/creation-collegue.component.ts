@@ -1,5 +1,5 @@
 import { Collegue } from './../models/Collegue';
-import { NewCollegue } from './../domains/Collegue';
+import { NewCollegue } from './../domains/collegue';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DataService } from '../services/data.service';

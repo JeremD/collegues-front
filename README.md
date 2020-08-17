@@ -4,12 +4,6 @@
 
 **[App link](https://jeremd.github.io/collegues-front/)**
 
-## TP 5 Incomplet !!!
-
-La branch **back-local** contient le code jusqu'au TP 4.
-
-(je ne peux pas avancer sur le TP 5 pendant les vancances).
-
 ---
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.

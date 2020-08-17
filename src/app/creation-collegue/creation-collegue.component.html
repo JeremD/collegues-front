@@ -1,0 +1,63 @@
+<!-- Création de collègue -->
+<form (ngSubmit)="submit()" #checkForm="ngForm">
+  <!-- Nom -->
+  <div class="form-group">
+    <label>Nom </label>
+    <input class="form-control" type="text" name="nomCollegue"
+      #nomCollegue="ngModel" placeholder="Nom"
+      [(ngModel)]="collegueNouveau.nom" required minlength="2">
+    <p *ngIf="nomCollegue.dirty && nomCollegue.invalid">
+      Le nom est invalide !
+    </p>
+  </div>
+  <!-- Prénom -->
+  <div class="form-group">
+    <label>Prénom </label>
+    <input class="form-control" type="text" name="prenomCollegue"
+      #prenomCollegue="ngModel" placeholder="Prénom"
+      [(ngModel)]="collegueNouveau.prenom" required minlength="2">
+    <p *ngIf="prenomCollegue.dirty && prenomCollegue.invalid">
+      Le prénom est invalide !
+    </p>
+  </div>
+  <!-- Date de naissance -->
+  <div class="form-group">
+    <label>Date de naissance </label>
+    <input class="form-control" type="date" name="dateNaissanceCollegue"
+      #dateNaissanceCollegue="ngModel"
+      [(ngModel)]="collegueNouveau.dateDeNaissance" required>
+    <p id="date" *ngIf="dateNaissanceCollegue.dirty && dateNaissanceCollegue.invalid">
+      La date de naissance est invalide !
+    </p>
+  </div>
+  <!-- Email -->
+  <div class="form-group">
+    <label>Email </label>
+    <input class="form-control" type="email" name="emailCollegue"
+      #emailCollegue="ngModel" placeholder="Email"
+      [(ngModel)]="collegueNouveau.email" required minlength="2">
+    <p *ngIf="emailCollegue.dirty && emailCollegue.invalid">
+      L'email est invalide !
+    </p>
+  </div>
+  <!-- Photo -->
+  <div class="form-group">
+    <label>Photo URL </label>
+    <input class="form-control" type="url" name="photoCollegue"
+      #photoCollegue="ngModel" placeholder="URL de la photo"
+      [(ngModel)]="collegueNouveau.photoUrl" required minlength="7">
+    <p *ngIf="photoCollegue.dirty && photoCollegue.invalid">
+      Photo non trouvée !
+    </p>
+  </div>
+
+  <!-- Bouton créer -->
+  <button (click)="submit()"  type="submit" class="btn-primary form-control"
+    *ngIf="checkForm.valid"> Créer</button>
+
+  <!-- Erreurs si formulaire invalide -->
+  <p *ngIf="checkForm.dirty && checkForm.invalid">
+    Le formulaire est incomplet !
+  </p>
+
+</form>

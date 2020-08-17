@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { Collegue } from '../models/Collegue';
 import { DataService } from '../services/data.service';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 // Identité d'un collègue
 @Component({
@@ -8,20 +9,32 @@ import { DataService } from '../services/data.service';
   templateUrl: './collegue.component.html',
   styleUrls: ['./collegue.component.css']
 })
-export class CollegueComponent implements OnInit {
+export class CollegueComponent implements OnInit, OnDestroy {
 
   // Module Input
   @Input()
-  col: Collegue;
+  col: Collegue;  // appel du collègue
 
-  // Switch button
+  // Interversion boutons modifier / valider
   switchBtn = false;
 
-  // Appel du service collègue
-  constructor(private collegueSrv: DataService) { }
+  // Abonnement
+  collegueSelectionne: Subscription;
 
+  // Appel du service collègue
+  constructor(private collegueServ: DataService) { }
+
+  // Récupérer informations collègue au démarrage (injection de dépendance par Type)
   ngOnInit(): void {
-    this.col = this.collegueSrv.recupererCollegueCourant();
+    this.collegueSelectionne = this.collegueServ.sabonnerAuCollegue().subscribe(
+      col => this.col = col,
+      err => console.error(err),
+    );
+  }
+
+  // Destruction de l'abonnement
+  ngOnDestroy(): void {
+    this.collegueSelectionne.unsubscribe();
   }
 
   // Créer un collègue

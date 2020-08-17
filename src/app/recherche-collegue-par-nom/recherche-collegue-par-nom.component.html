@@ -1,9 +1,9 @@
 <h5>Recherche par nom</h5>
 
 <div class="input-group mb-3">
- <input type="text" class="form-control" placeholder="Nom">
+ <input type="text" class="form-control" placeholder="Nom du collègue" #nomRecherche>
   <div class="input-group-append">
-    <button class="btn btn-outline-secondary" (click)="rechercher()">Rechercher</button>
+    <button class="btn btn-outline-secondary" (click)="rechercher(nomRecherche)">Rechercher</button>
   </div>
 </div>
 

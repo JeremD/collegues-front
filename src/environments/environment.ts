@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  title: 'Collègues Front DEV',
-  backendUrl: 'http://localhost:8080'
+  title: 'Administration Collègues DEV',
+  backendUrl: 'https://leo-collegues-api.herokuapp.com/'
 };
 /*
  * For easier debugging in development mode, you can import the following file

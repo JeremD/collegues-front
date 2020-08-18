@@ -17,7 +17,7 @@ import { DataService } from './services/data.service';
 
 // Entrées dans le html
 export class AppComponent {
-  title = 'Collègues Front';
+  title = 'Administration Collègues';
   collegue = collegueMock;
   matricule = matriculesMock;
 }

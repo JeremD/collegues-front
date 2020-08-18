@@ -31,7 +31,7 @@ export class CreationCollegueComponent implements OnInit {
   submit(): void {
       this.collegueServ.creerCollegue(this.collegueNouveau).subscribe(
         collegue => this.collegue = collegue,
-        err => console.error(err),
+        err => console.log(err),
         () => {}
       );
   }

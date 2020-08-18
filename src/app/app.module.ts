@@ -1,7 +1,9 @@
+import { AccueilComponent } from './accueil/accueil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ROUTES } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { CollegueComponent } from './collegue/collegue.component';
@@ -9,6 +11,10 @@ import { RechercheCollegueParNomComponent } from './recherche-collegue-par-nom/r
 import { DataService } from './services/data.service';
 import { environment } from 'src/environments/environment';
 import { CreationCollegueComponent } from './creation-collegue/creation-collegue.component';
+import { MenuComponent } from './menu/menu.component';
+import { GallerieComponent } from './gallerie/gallerie.component';
+import { AProposComponent } from './a-propos/a-propos.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   // liste des composants
@@ -16,13 +22,18 @@ import { CreationCollegueComponent } from './creation-collegue/creation-collegue
     AppComponent,
     CollegueComponent,
     RechercheCollegueParNomComponent,
-    CreationCollegueComponent
+    CreationCollegueComponent,
+    MenuComponent,
+    AccueilComponent,
+    GallerieComponent,
+    AProposComponent
   ],
   // dépendances vers les autres modules
   imports: [
     BrowserModule, // module navigateur
     FormsModule, // module forms
-    HttpClientModule // module http
+    HttpClientModule, // module http
+    RouterModule.forRoot(ROUTES) // module router
   ],
   // liste des services
   providers: [
@@ -32,5 +43,5 @@ import { CreationCollegueComponent } from './creation-collegue/creation-collegue
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  title = 'Collègues Front';
+  title = 'Administration Collègues';
 }

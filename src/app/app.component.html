@@ -1,22 +1,14 @@
- <div class="jumbotron" id="jumbo">
-  <h1>Collègues</h1>
-</div>
+ <!-- En-tête -->
+<header class="jumbotron">
+  <h1>Administration Collègues</h1>
+</header>
 
-<div class="container-fluid">
-  <div class="row">
-    <!-- Recherche par le nom -->
-    <div class="col-12 col-lg-4">
-      <app-recherche-collegue-par-nom></app-recherche-collegue-par-nom>
-    </div>
+<!-- Menu Component -->
+<nav class="navbar navbar-expand-sm">
+  <app-menu></app-menu>
+</nav>
 
-    <!-- Affichage du collègue -->
-    <!-- <div class="col-12 col-lg-8"> -->
-    <!--<app-collegue [col]="collegue"></app-collegue> -->
-    <!--  </div> -->
-
-    <!-- Création du collègue -->
-    <div class="col-12 col-lg-8">
-      <app-creation-collegue></app-creation-collegue>
-    </div>
-  </div>
-</div>
+<!-- Accueil Component -->
+<main>
+  <router-outlet></router-outlet>
+</main>

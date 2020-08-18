@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './recherche-collegue-par-nom.component.html',
   styleUrls: ['./recherche-collegue-par-nom.component.css']
 })
-export class RechercheCollegueParNomComponent implements OnInit, OnDestroy {
+export class RechercheCollegueParNomComponent implements OnInit {
 
   // Matricules masqués
   recherche = false;
@@ -34,15 +34,12 @@ export class RechercheCollegueParNomComponent implements OnInit, OnDestroy {
     );
   }
 
-  // select(matricule: string): void {
-  //   this.collegueServ.selectionner(matricule).subscribe(
-  //     err => console.error(err),
-  //     () => { }
-  //   );
-  // }
-
-  ngOnDestroy(): void {
-    this.collegueRecherche.unsubscribe();
+  // Afficher collègue par son matricule
+  select(matricule: string): void {
+    this.collegueServ.recupererCollegueCourant(matricule).subscribe(
+      err => console.error(err),
+      () => { }
+    );
   }
 
 }

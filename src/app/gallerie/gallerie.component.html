@@ -1,1 +1,10 @@
-<p>N° matricule : = {{mat}}</p>
+ <!-- Affichage des photos -->
+<div class="row">
+  <div class="col-md-3" *ngFor="let photo of photosUrl">
+    <div class="gallerie">
+      <a href="gallerie/{{photo.matricule}}">
+        <img class="img-responsive" src="{{photo.photoUrl }}" alt="photo collègue">
+      </a>
+    </div>
+  </div>
+</div>

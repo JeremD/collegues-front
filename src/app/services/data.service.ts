@@ -1,3 +1,4 @@
+import { ColleguePhoto } from './../domains/collegue.photo';
 import { NewCollegue } from './../domains/collegue';
 import { Injectable } from '@angular/core';
 import { Collegue } from '../models/Collegue';
@@ -29,6 +30,13 @@ export class DataService {
    */
   rechercherParNom(nom: string): Observable<string[]> {
     return this.http.get<string[]>(`${this.URL_BACKEND}collegues?nom=${nom}`);
+  }
+
+  /**
+   * Récupérer photos de tous les collègues (GET)
+   */
+  recupererColleguesPhotos(): Observable<ColleguePhoto[]> {
+    return this.http.get<ColleguePhoto[]>(`${this.URL_BACKEND}collegues/photos`);
   }
 
   /**

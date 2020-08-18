@@ -26,8 +26,8 @@ export class RechercheCollegueParNomComponent implements OnInit {
   }
 
   // Afficher la liste des matricules
-  rechercher(saisie: HTMLInputElement): void {
-    this.collegueServ.rechercherParNom(saisie.value).subscribe(
+  rechercher(saisieNom: HTMLInputElement): void {
+    this.collegueServ.rechercherParNom(saisieNom.value).subscribe(
       mat => this.matriculeTab = mat,
       err => console.error(err),
       () => { }

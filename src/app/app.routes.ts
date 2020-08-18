@@ -5,7 +5,7 @@ import { AProposComponent } from './a-propos/a-propos.component';
 
 export const ROUTES: Routes = [
   { path: 'accueil', component: AccueilComponent },
-  { path: 'gallerie/:matricule', component: GallerieComponent },
+  { path: 'gallerie', component: GallerieComponent },
   { path: 'apropos', component: AProposComponent },
   { path: '', pathMatch: 'full', redirectTo: '/accueil' } // redirection par défaut
 ];

@@ -1,0 +1,51 @@
+<!-- Photo -->
+<div class="row" id="infos-collegue" *ngIf="col">
+    <img src={{col.photoUrl}} alt="Photo">
+</div>
+<div class="row">
+  <div class="col-12 col-md-8">
+    <!-- Matricule -->
+    <div class="row">
+      <div class="col" id="labelcol">
+        <p>Matricule</p>
+      </div>
+      <div class="col">
+        <p>{{col.matricule}}</p>
+      </div>
+    </div>
+    <!-- Nom -->
+    <div class="row">
+      <div class="col" id="labelcol">
+        <p>Nom</p>
+      </div>
+      <div class="col">
+        <p>{{col.nom | uppercase}}</p>
+      </div>
+    </div>
+    <!-- Prénom -->
+    <div class="row">
+      <div class="col" id="labelcol">
+        <p>Prénom</p>
+      </div>
+      <div class="col">
+        <p>{{col.prenom}}</p>
+      </div>
+    </div>
+    <!-- Date de naissance -->
+    <div class="row">
+      <div class="col" id="labelcol">
+        <p>Date de naissance</p>
+      </div>
+      <div class="col">
+        <p>{{col.dateDeNaissance | date : 'd/MM/y'}}</p>
+      </div>
+    </div>
+    <!-- Email -->
+    <div class="row">
+      <div class="col" id="labelcol">
+        <p>Email</p>
+      </div>
+      <p>{{col.email}}</p>
+    </div>
+  </div>
+</div>

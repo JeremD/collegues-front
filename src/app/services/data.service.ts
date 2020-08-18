@@ -42,8 +42,8 @@ export class DataService {
   /**
    * Récupérer un collègue depuis son matricule (GET)
    */
-  recupererCollegueCourant(mattricule: string): Observable<Collegue> {
-    return this.http.get<Collegue>(`${this.URL_BACKEND}collegues?nom=${mattricule}`);
+  recupererCollegueCourant(matricule: string): Observable<Collegue> {
+    return this.http.get<Collegue>(`${this.URL_BACKEND}collegues?nom=${matricule}`);
   }
 
   /**

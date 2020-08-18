@@ -15,6 +15,7 @@ import { MenuComponent } from './menu/menu.component';
 import { GallerieComponent } from './gallerie/gallerie.component';
 import { AProposComponent } from './a-propos/a-propos.component';
 import { RouterModule } from '@angular/router';
+import { CollegueInfosComponent } from './collegue-infos/collegue-infos.component';
 
 @NgModule({
   // liste des composants
@@ -26,7 +27,8 @@ import { RouterModule } from '@angular/router';
     MenuComponent,
     AccueilComponent,
     GallerieComponent,
-    AProposComponent
+    AProposComponent,
+    CollegueInfosComponent
   ],
   // dépendances vers les autres modules
   imports: [

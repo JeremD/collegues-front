@@ -37,11 +37,6 @@ export class CollegueComponent implements OnInit, OnDestroy {
     this.collegueSelectionne.unsubscribe();
   }
 
-  // Créer un collègue
-  creer(): void {
-    console.log('Création d’un nouveau collègue');
-  }
-
   // Modifier un collègue
   modifier(): void {
     this.switchBtn = true;
@@ -51,6 +46,11 @@ export class CollegueComponent implements OnInit, OnDestroy {
   // Valider
   valider(): void {
     this.switchBtn = false;
+  }
+
+  // Créer un collègue
+  creer(): void {
+    console.log('Création d’un nouveau collègue');
   }
 
 }

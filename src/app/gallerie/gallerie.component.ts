@@ -1,7 +1,5 @@
 import { ColleguePhoto } from './../domains/collegue.photo';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { collegueMock } from '../mock/collegues.mock';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -11,34 +9,20 @@ import { DataService } from '../services/data.service';
 })
 export class GallerieComponent implements OnInit {
 
-  // Numéro matricule
-  mat: number;
-
   // Photos des collègues
   photosUrl: ColleguePhoto[];
 
+  // Numéro matricule
+  mat: number;
+
   // Injection du service ActivatedRoute
-  constructor(private activatedRoute: ActivatedRoute, private collegueServ: DataService) {
-    this.mat = Number.parseInt(activatedRoute.snapshot.paramMap.get('mat'), 0);
+  constructor(private collegueServ: DataService) {
   }
 
-  // Abonnement au changement de route avec réutilisation du composant par le routeur
+  // Récupération photos collègues
   ngOnInit(): void {
-    // this.activatedRoute.paramMap.subscribe(
-    //   (params: ParamMap) => {
-    //     this.mat = Number.parseInt(params.get('matricule'), 0);
-    //   }
-    // );
     this.collegueServ.recupererColleguesPhotos().subscribe(
       photos => this.photosUrl = photos
     );
   }
-
-  // Affichage de tous les collègues
-  // select(): void {
-  //   this.collegueServ.recupererCollegue().subscribe(
-  //     err => console.error(err),
-  //     () => { }
-  //   );
-  // }
 }

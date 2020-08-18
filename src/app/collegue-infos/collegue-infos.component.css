@@ -1,7 +1,12 @@
 #labelcol {
   font-weight: bold;
+  padding-top: 10px;
 }
 
 #infos-collegue {
-  padding: 15px;
+  padding: 10px;
+}
+
+#content-collegue {
+   margin: auto;
 }

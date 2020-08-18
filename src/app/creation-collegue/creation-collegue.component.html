@@ -3,7 +3,7 @@
 
 <form (ngSubmit)="submit()" #checkForm="ngForm">
   <!-- Nom -->
-  <div class="form-group">
+  <div class="form-inline">
     <label>Nom </label>
     <input class="form-control" type="text" name="nomCollegue"
       #nomCollegue="ngModel" placeholder="Nom"
@@ -13,7 +13,7 @@
     </p>
   </div>
   <!-- Prénom -->
-  <div class="form-group">
+  <div class="form-inline">
     <label>Prénom </label>
     <input class="form-control" type="text" name="prenomCollegue"
       #prenomCollegue="ngModel" placeholder="Prénom"
@@ -23,17 +23,18 @@
     </p>
   </div>
   <!-- Date de naissance -->
-  <div class="form-group">
+  <div class="form-inline">
     <label>Date de naissance </label>
     <input class="form-control" type="date" name="dateNaissanceCollegue"
       #dateNaissanceCollegue="ngModel"
       [(ngModel)]="collegueNouveau.dateDeNaissance" required>
-    <p id="date" *ngIf="dateNaissanceCollegue.dirty && dateNaissanceCollegue.invalid">
+    <p id="date" *ngIf="dateNaissanceCollegue.dirty &&
+      dateNaissanceCollegue.invalid">
       La date de naissance est invalide !
     </p>
   </div>
   <!-- Email -->
-  <div class="form-group">
+  <div class="form-inline">
     <label>Email </label>
     <input class="form-control" type="email" name="emailCollegue"
       #emailCollegue="ngModel" placeholder="Email"
@@ -43,7 +44,7 @@
     </p>
   </div>
   <!-- Photo -->
-  <div class="form-group">
+  <div class="form-inline">
     <label>Photo URL </label>
     <input class="form-control" type="url" name="photoCollegue"
       #photoCollegue="ngModel" placeholder="URL de la photo"
@@ -54,12 +55,13 @@
   </div>
 
   <!-- Bouton créer -->
-  <button (click)="submit()"  type="submit" class="btn-primary form-control"
-    *ngIf="checkForm.valid"> Créer</button>
-
-  <!-- Erreurs si formulaire invalide -->
-  <p *ngIf="checkForm.dirty && checkForm.invalid">
-    Le formulaire est incomplet !
-  </p>
+  <div class="form-inline">
+    <button (click)="submit()" type="submit" class="btn-primary form-control"
+      *ngIf="checkForm.valid"> Créer</button>
+    <!-- Erreurs si formulaire invalide -->
+    <p *ngIf="checkForm.dirty && checkForm.invalid">
+      Le formulaire est incomplet !
+    </p>
+  </div>
 
 </form>

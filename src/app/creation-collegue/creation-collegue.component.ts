@@ -11,12 +11,14 @@ import { DataService } from '../services/data.service';
 })
 export class CreationCollegueComponent implements OnInit {
 
+  // Collègue et nouveau collègue
   collegue: Collegue;
   collegueNouveau: NewCollegue;
 
   // Appel du service collègue
   constructor(private collegueServ: DataService) { }
 
+  // Données du formulaire
   ngOnInit(): void {
     this.collegueNouveau = {
       nom: '',
@@ -30,9 +32,8 @@ export class CreationCollegueComponent implements OnInit {
   // Créer un collègue dans le formulaire
   submit(): void {
       this.collegueServ.creerCollegue(this.collegueNouveau).subscribe(
-        collegue => this.collegue = collegue,
-        err => console.log(err),
-        () => {}
+        col => this.collegue = col,
+        err => console.error(err)
       );
   }
 }

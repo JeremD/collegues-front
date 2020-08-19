@@ -11,8 +11,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class CollegueInfosComponent implements OnInit, OnDestroy {
 
-  // Module Input
-  @Input()
+  // Collègue
   col: Collegue;
 
   // Numéro matricule
